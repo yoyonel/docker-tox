@@ -69,6 +69,35 @@ RUN apt-get update && \
 
 RUN pip install -U pip && pip install tox
 
+# # Numpy
+# # for Python2.7
+# RUN pip install -U numpy
+
+# RUN apt-get update && \
+#     apt-get -y install \
+#         python-scipy  && \
+#     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# # for Python2.6 (from source)
+# RUN apt-get update && \
+#     apt-get -y --no-install-recommends install \
+#         python-dev  && \
+#     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# RUN wget https://pypi.python.org/packages/dc/6a/5899b7baaa3ebbcc49fb97cdf6b96964d65684864562a1f4ca4cc9f578c8/numpy-1.6.1.tar.gz#md5=2bce18c08fc4fce461656f0f4dd9103e &&\
+#     tar xzvf numpy-1.6.1.tar.gz &&\
+#     cd numpy-1.6.1 &&\
+#     python2.6 setup.py install 
+#     # &&\
+#     # cd ..; rm -rf numpy-1.6.1; rm numpy-1.6.1.tar.gz
+
+# # Python 3.x
+# # url: http://stackoverflow.com/questions/17443354/install-numpy-on-python3-3-install-pip-for-python3
+# # Python 3.4
+# RUN wget https://bootstrap.pypa.io/get-pip.py &&\
+#     python3.4 get-pip.py &&\
+#     python3.4 -m pip install numpy
+
 WORKDIR /app
 VOLUME /src
 
