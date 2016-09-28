@@ -113,5 +113,5 @@ ONBUILD RUN bash -c " \
 
 COPY docker-entrypoint.sh /
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["tox"]
+# ENTRYPOINT ["/docker-entrypoint.sh"]
+# CMD ["tox"]

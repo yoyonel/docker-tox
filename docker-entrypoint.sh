@@ -11,11 +11,11 @@ find /src -mindepth 1 -maxdepth 1 \( -type d -name ".*" -prune \) -o -exec cp -r
 # Tox will be run by the "tox" user, so it should own /app/.
 chown -R tox:tox /app/
 
-if [[ "${1}" == "tox" ]]; then
-    # If the first argument was "tox" (which is the default), run tox
-    # with the "tox" user, passing the remaining arguments right along.
-    exec gosu tox "$@"
-fi
+# if [[ "${1}" == "tox" ]]; then
+#     # If the first argument was "tox" (which is the default), run tox
+#     # with the "tox" user, passing the remaining arguments right along.
+#     exec gosu tox "$@"
+# fi
 
-# If the first argument was not "tox", run whichever command was given.
-exec "$@"
+# # If the first argument was not "tox", run whichever command was given.
+# exec "$@"
