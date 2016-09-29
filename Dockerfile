@@ -1,4 +1,5 @@
-FROM ubuntu:14.04
+# FROM ubuntu:14.04
+FROM ignf/ubuntu
 
 MAINTAINER Matthew Tardiff <mattrix@gmail.com>
 
@@ -69,8 +70,10 @@ RUN apt-get update && \
 
 RUN pip install -U pip && pip install tox
 
+# RUN pip install -U numpy
+
 WORKDIR /app
-VOLUME /src
+VOLUME /source
 
 ONBUILD COPY install-prereqs*.sh requirements*.txt tox.ini /app/
 ONBUILD ARG SKIP_TOX=false
